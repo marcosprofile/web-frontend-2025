@@ -9,8 +9,9 @@ const lista = document.querySelector('#lista')
 const search = document.querySelector('#search')
 let itensLista = ''
 
-for (let i in nomes) {
-  let nome = nomes[i]
+const ordemAlfabetica = [...nomes].sort((a, b) => a.localeCompare(b))
+
+for (let nome of ordemAlfabetica) {
   itensLista += `
       <li class="p-3 border-b-1 border-zinc-600 text-zinc-200">
         ${nome}
@@ -25,7 +26,9 @@ function pesquisarNome() {
   const lista = document.querySelector('#lista')
   const search = document.querySelector('#search')
 
-  const pesquisa = nomes.filter(nome =>
+  const ordemAlfabetica = [...nomes].sort((a, b) => a.localeCompare(b))
+
+  const pesquisa = ordemAlfabetica.filter(nome =>
     nome.toLowerCase().includes(search.value.toLowerCase())
   )
 
