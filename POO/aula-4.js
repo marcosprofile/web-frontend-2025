@@ -1,8 +1,8 @@
 class Animal {
-  constructor() {
-    this.cor = ''
-    this.tamanho = 0
-    this.peso = 0
+  constructor(cor, tamanho, peso) {
+    this.cor = cor
+    this.tamanho = tamanho
+    this.peso = peso
   }
   
   correr() { console.log('Correr como um') }
@@ -10,9 +10,9 @@ class Animal {
 }
 
 class Cao extends Animal {
-  constructor() {
-    super()
-    this.tamanhoOrelha = 0
+  constructor(cor, tamanho, peso, tamanhoOrelha) {
+    super(cor, tamanho, peso)
+    this.tamanhoOrelha = tamanhoOrelha
   }
 
   correr() {
@@ -23,6 +23,11 @@ class Cao extends Animal {
 }
 
 class Passaro extends Animal {
+  correr() {
+    super.correr()
+    console.log('passaro')
+  }
+
   voar() { console.log('Voar') }
 }
 
@@ -30,8 +35,9 @@ class Papagaio extends Passaro {
   falar() { console.log('Falar') }
 }
 
-const cao = new Cao
+const animal = new Animal('Amarelo', 1, 3)
+const cao = new Cao('Amarelo', 1, 5, 3)
 const passaro = new Passaro
 const papagaio = new Papagaio
 
-cao.correr()
+console.log(cao)
