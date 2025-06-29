@@ -1,12 +1,17 @@
 const Hotel = function () {
   this.nome = 'Hotel Transilvânia'
-  this.quantidadeSuites = 30
-  this.suitesOcupadas = 20
+  let totalSuites = 30
+  let suitesOcupadas = 28
+
+  this.quantidadeSuites = function () {
+    console.log(`Quantidade de Suítes: ${totalSuites}`)
+  }
 
   this.reservar = function () {
-    if (this.suitesOcupadas < this.quantidadeSuites) {
-      this.suitesOcupadas++
-      console.log(`+1 reserva`)
+    if (suitesOcupadas < totalSuites) {
+      suitesOcupadas++
+      console.log('+1 reserva')
+      console.log(`Suítes ocupadas: ${suitesOcupadas}`)
     } else {
       console.log('Todas as suítes estão ocupadas no momento.')
     }
@@ -16,29 +21,10 @@ const Hotel = function () {
 const hotel = new Hotel()
 
 console.log(typeof hotel)
-console.log('Quantidade de Suítes: ', + hotel.quantidadeSuites)
-console.log('Suítes ocupadas: ', + hotel.suitesOcupadas)
+hotel.quantidadeSuites()
 
 console.log('\n')
 
 hotel.reservar()
-console.log('Suítes ocupadas: ', + hotel.suitesOcupadas)
 hotel.reservar()
-console.log('Suítes ocupadas: ', + hotel.suitesOcupadas)
-hotel.reservar()
-console.log('Suítes ocupadas: ', + hotel.suitesOcupadas)
-hotel.reservar()
-console.log('Suítes ocupadas: ', + hotel.suitesOcupadas)
-hotel.reservar()
-console.log('Suítes ocupadas: ', + hotel.suitesOcupadas)
-hotel.reservar()
-console.log('Suítes ocupadas: ', + hotel.suitesOcupadas)
-hotel.reservar()
-console.log('Suítes ocupadas: ', + hotel.suitesOcupadas)
-hotel.reservar()
-console.log('Suítes ocupadas: ', + hotel.suitesOcupadas)
-hotel.reservar()
-console.log('Suítes ocupadas: ', + hotel.suitesOcupadas)
-hotel.reservar()
-console.log('Suítes ocupadas: ', + hotel.suitesOcupadas)
 hotel.reservar()
